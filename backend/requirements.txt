@@ -1,0 +1,7 @@
+joblib
+torch
+numpy
+pandas
+flask
+flask_cors
+gunicorn

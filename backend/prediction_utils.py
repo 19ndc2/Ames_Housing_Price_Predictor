@@ -3,7 +3,6 @@ import joblib
 import torch
 import numpy as np
 import pandas as pd
-import sys
 
 #Load exported model skicit model
 models_data = joblib.load("all_models_export.pkl")
@@ -111,7 +110,6 @@ def getPredictions(user_input):
             if dummy_name in input_df.columns:
                 input_df.at[0, dummy_name] = 1
     
-    #print(input_df.columns)
 
 
 
@@ -123,9 +121,6 @@ def getPredictions(user_input):
     input_df['LotRatio'] = input_df['GrLivArea']/input_df['LotArea']
     input_df['GarageLotRatio'] = input_df['GarageArea']/input_df['LotArea']
 
-    #check dataframe
-    #print(input_df.columns)
-    #sys.exit()
 
 
 
@@ -145,7 +140,6 @@ def getPredictions(user_input):
         predictions_sklearn[name] = pred.round(2)
 
 
-    #print(input_df.columns)
 
     #Convert to torch tensor for PyTorch models
     input_tensor = torch.tensor(input_df.values.astype(np.float32))
@@ -165,24 +159,11 @@ def getPredictions(user_input):
         rbf_pred = np.expm1(rbf_pred_log.numpy().flatten())
 
 
-    # 8. Display results
-    # print("Predictions (in dollars):")
-    # for name, pred in predictions_sklearn.items():
-    #     print(f"{name}: ${pred[0]:,.2f}")
-    # print(f"MLP: ${mlp_pred[0]:,.2f}")
-    # print(f"RBF: ${rbf_pred[0]:,.2f}")
 
-
-    # --- Combine all predictions into a single dictionary ---
+    # Combine all predictions into a single dictionary
     predictions_all = predictions_sklearn.copy()  # start with sklearn predictions
     predictions_all['MLP'] = mlp_pred
     predictions_all['RBF'] = rbf_pred
-
-    # # --- Display results ---
-    # print("Predictions (in dollars):")
-    # for name, pred in predictions_all.items():
-    #     print(f"{name}: ${pred[0]:,.2f}")
-
 
     #get final dataframe
     metrics_df = pd.DataFrame({
@@ -197,4 +178,3 @@ def getPredictions(user_input):
     return results_df
 
 results_df_final = getPredictions(example_user_input)
-#print(results_df_final)
