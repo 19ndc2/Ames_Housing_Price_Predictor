@@ -5,3 +5,4 @@ pandas
 flask
 flask_cors
 gunicorn
+scikit-learn
