@@ -1,0 +1,97 @@
+/* Body background */
+body {
+  background-color: #f0f0f0; /* light gray for outside the form */
+  margin: 0;
+  padding: 0;
+}
+
+/* General App styling */
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 600px; /* narrower for form layout */
+  margin: 40px auto; /* centers form with some vertical spacing */
+  background-color: #fff; /* white form area */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+/* Headings */
+h1, h2 {
+  color: #333;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column; /* stack fields vertically */
+  align-items: stretch;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+input[type="number"],
+select {
+  padding: 6px 10px;
+  font-size: 1rem;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Submit button */
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  align-self: center; /* center the button */
+}
+
+button[type="submit"]:hover {
+  background-color: #21a1f1;
+}
+
+/* Prediction table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #282c34;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+
+td.wrap-text {
+  white-space: pre-wrap; /* Allows text to wrap in table cells */
+  word-wrap: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  table, th, td {
+    font-size: 0.9rem;
+  }
+}
