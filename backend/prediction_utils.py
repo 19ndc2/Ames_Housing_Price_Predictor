@@ -4,6 +4,10 @@ import torch
 import numpy as np
 import pandas as pd
 
+if not hasattr(np, 'float'):
+    np.float = float
+
+
 #Load exported model skicit model
 models_data = joblib.load("all_models_export.pkl")
 

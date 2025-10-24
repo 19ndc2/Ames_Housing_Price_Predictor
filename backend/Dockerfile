@@ -17,6 +17,7 @@ RUN apt-get update && \
 # Install PyTorch from source
 RUN pip install --upgrade pip && \
     pip install torch flask flask_cors scikit-learn==1.5.2 gunicorn pandas numpy joblib
+    #get better roch 
 
 # Copy application files
 COPY . .
