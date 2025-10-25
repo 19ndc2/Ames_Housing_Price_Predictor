@@ -4,6 +4,8 @@ import torch
 import numpy as np
 import pandas as pd
 
+print(np.__version__)
+
 if not hasattr(np, 'float'):
     np.float = float
 
