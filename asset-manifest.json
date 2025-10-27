@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Ames_Housing_Price_Predictor/static/css/main.fb8a28db.css",
-    "main.js": "/Ames_Housing_Price_Predictor/static/js/main.74c64166.js",
+    "main.js": "/Ames_Housing_Price_Predictor/static/js/main.69aed14d.js",
     "static/js/453.d7446e4a.chunk.js": "/Ames_Housing_Price_Predictor/static/js/453.d7446e4a.chunk.js",
     "index.html": "/Ames_Housing_Price_Predictor/index.html",
     "main.fb8a28db.css.map": "/Ames_Housing_Price_Predictor/static/css/main.fb8a28db.css.map",
-    "main.74c64166.js.map": "/Ames_Housing_Price_Predictor/static/js/main.74c64166.js.map",
+    "main.69aed14d.js.map": "/Ames_Housing_Price_Predictor/static/js/main.69aed14d.js.map",
     "453.d7446e4a.chunk.js.map": "/Ames_Housing_Price_Predictor/static/js/453.d7446e4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb8a28db.css",
-    "static/js/main.74c64166.js"
+    "static/js/main.69aed14d.js"
   ]
 }
