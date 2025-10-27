@@ -17,9 +17,11 @@ function App() {
 
   useEffect(() => {
     // Wake backend on initial load
-    fetch("https://ames-housing-price-predictor.onrender.com/predict", {
+    fetch("https://crusted-laura-unjudging.ngrok-free.dev/housing/predict", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "true" 
+       },
       body: JSON.stringify({ dummy: true }) // dummy ping to wake backend
     })
       .then(() => console.log("Wake-up ping successful!"))
@@ -66,10 +68,12 @@ function App() {
 
     try {
       const response = await fetch(
-        "https://ames-housing-price-predictor.onrender.com/predict",
+        "https://crusted-laura-unjudging.ngrok-free.dev/housing/predict",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json",
+            "ngrok-skip-browser-warning": "true" 
+           },
           body: JSON.stringify(inputData),
         }
       );
@@ -279,8 +283,8 @@ function App() {
       </form>
 
       <p>
-      This demo runs on a free server, which sleeps when idle.
-      The first prediction may take up to 1–2 minutes while the backend wakes up.
+      This demo runs uses a free tunnel.
+      The first prediction may take up to a minute while the tunnel reconnects.
       </p>
 
       {predictions.length > 0 && (
